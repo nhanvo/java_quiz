@@ -110,14 +110,13 @@ public class SingleLinkedList {
 		
 		// Linked list have many elements
 		Element element = head;
-		System.out.print("List: ");
+		System.out.print("  List: ");
 		while (element.getLink() != null) {
 			System.out.print(element.getData() + " -> ");
 			element = element.getLink();
 		}
-		System.out.print(tail.getData());
-		System.out.println();
-		System.out.println("Size: " + size);
+		System.out.print(tail.getData() + "\n");
+		System.out.println("  Size: " + size + "\n");
 	}	
 	
 }
