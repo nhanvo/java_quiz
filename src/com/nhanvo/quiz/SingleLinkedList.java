@@ -1,40 +1,43 @@
 package com.nhanvo.quiz;
 
-import sun.security.action.GetLongAction;
 
 public class SingleLinkedList {
-	
-	private Node start;
-	private Node end;
+	private Element head;
+	private Element tail;
 	private int size;
 	
 	/*
 	 * Constructor
 	 */
 	public SingleLinkedList() {
-		start = null;
-		end = null;
+		head = null;
+		tail = null;
 		size = 0;
 	}
 	
-
-	public void appendAtStart(int data) {
-		Node node = new Node(data, null);
+	// 1. Append an element into the linked list
+	public void append(int data) {
+		Element node = new Element(data, null);
 		size++;
 		
-		// Linked list is empty
-		if (start == null){
-			start = node;
-			end = start;
+		// Linked list empty
+		if (head == null){
+			head = node;
+			tail = head;
 			
 		// Linked list not empty
 		} else {
-			node.setLink(start);
-			start = node;
+			tail.setLink(node);
+			tail = node;
 		}
 	}
 	
+	// 2. Remove the tail element from a linked list
 	
+	
+	/*
+	 * Display data in linked list
+	 */
 	public void display() {
 		// Linked list is empty
 		if (size == 0) {
@@ -43,20 +46,20 @@ public class SingleLinkedList {
 		}
 		
 		// Linked list only have one node
-		if (start.getLink() == null) {
-			System.out.println(start.getData());
+		if (head.getLink() == null) {
+			System.out.println(head.getData());
 			return;
 		}
-		Node node = start;
+		Element node = head;
 		// Linked list have many node
 		while (size > 0) {
-			System.out.println(node.getData());
+			System.out.print(node.getData() + " -> ");
 			node = node.getLink();
 			size --;
 		}
 		
 	}
-	// 1. Append an element into the linkedlist
-	// 2. Remove the tail element from a linkedlist
-	// 3. Remove all element in the linkedlist that is great than a target value
+	
+	
+	// 3. Remove all element in the linked list that is great than a target value
 }

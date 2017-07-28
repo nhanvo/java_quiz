@@ -5,9 +5,16 @@ import com.nhanvo.quiz.SingleLinkedList;
 public class Main {
 
 	public static void main(String[] args) {
+		// Initialize single linked list
 		SingleLinkedList list = new SingleLinkedList();
-		list.appendAtStart(10);
-		list.appendAtStart(20);
+		
+		// Append to start linked list
+		list.append(54);
+		list.append(124);
+		list.append(137);
+		list.append(289);
+		
+		// Display data
 		list.display();
 	}
 
